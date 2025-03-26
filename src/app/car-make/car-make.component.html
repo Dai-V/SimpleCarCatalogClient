@@ -1,0 +1,26 @@
+<h1>Cars</h1>
+@if (carMakes) {
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Make</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (carMake of carMakes; track carMake.carId) {
+        <tr ngFor="let carMake of carMakes">
+          <td> {{ carMake.carId }}</td>
+          <td>{{ carMake.model }}</td>
+          <td>{{ carMake.year }}</td>
+          <td> {{ carMake.make }}</td>
+
+        </tr>  
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}

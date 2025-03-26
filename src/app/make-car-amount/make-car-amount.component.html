@@ -1,0 +1,15 @@
+<h3>Make and the amount of Cars they made</h3>
+
+@if (makeCarAmount) {
+    <p>
+    <strong>{{makeCarAmount.name}}:</strong>
+    made {{makeCarAmount.carAmount}} cars 
+    </p>
+}
+
+<div>
+    <a mat-flat-button color="secondary"
+        [routerLink]="['/makes']" routerLinkActive="router-link-active">Back</a>
+
+</div>
+

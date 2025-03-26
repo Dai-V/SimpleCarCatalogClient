@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
-import { WeatherComponent } from './weather/weather.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CitiesComponent } from './cities/cities.component';
-import { CountriesComponent } from './countries/countries.component';
-import { CountryPopulationComponent } from './country-population/country-population.component';
+import { CarMakeComponent } from './car-make/car-make.component';
+import { MakeComponent } from './make/make.component';
+import { AppComponent } from './app.component';
+import { MakeCarAmountComponent } from './make-car-amount/make-car-amount.component';
 
 export const routes: Routes = [
-    {path:"weather", component: WeatherComponent},
     {path:"navbar", component: NavBarComponent},
-    {path:"cities", component: CitiesComponent},
-    {path:"countries", component: CountriesComponent},
-    {path:"countryPopulation/:id", component: CountryPopulationComponent},
-    {path:"", component: WeatherComponent, pathMatch:"full"}
+    {path:"cars", component: CarMakeComponent},
+    {path:"makes", component: MakeComponent},
+    {path:"makes/:id", component: MakeCarAmountComponent},
+    {path:"cars/:id", component: CarMakeComponent},
+    {path:"index", component: AppComponent, pathMatch:"full"}
 ];

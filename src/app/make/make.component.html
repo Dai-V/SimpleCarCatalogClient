@@ -1,0 +1,21 @@
+<h1>Makes</h1>
+@if (makes) {
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (make of makes; track make.makeId) {
+        <tr ngFor="let make of makes">
+          <td>  <a [routerLink]="['/makes',make.makeId]"> {{ make.makeId }} </a></td>
+          <td>{{ make.name }}</td>
+        </tr>  
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}
