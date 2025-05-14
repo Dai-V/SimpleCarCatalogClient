@@ -11,7 +11,7 @@
           <a mat-flat-button color="primary" (click)="logout()">Logout</a>
           }
           @else {
-            <a mat-flat-button color="primary" [routerLink]="['/login']">Login</a>
+            <a mat-flat-button color="primary" (click)="login()" [routerLink]="['/login']">Login</a>
           }
     </mat-toolbar>
     

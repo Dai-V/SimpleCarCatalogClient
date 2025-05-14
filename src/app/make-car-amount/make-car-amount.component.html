@@ -2,15 +2,29 @@
 
 @if (makeCarAmount) {
     <p>
-    <strong>{{makeCarAmount.name}}:</strong>
-    made {{makeCarAmount.carAmount}} cars 
+    <strong>List of all cars made by {{makeCarAmount.name}}:</strong>
     </p>
+    <p> Amount: {{makeCarAmount.carAmount}}</p>
+    <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Model</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (car of makeCarAmount.cars; track makeCarAmount.makeID) {
+        <tr ngFor="let car of makeCarAmount.cars">
+          <td> {{ car.carId }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.year }}</td>
+        </tr>  
+      }
+    </tbody>
+  </table>
 }
-@else {
-    <p>
-        UNAUTHORIZED
-    </p>
-}
+
 
 <div>
     <a mat-flat-button color="secondary"

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,Router, ActivatedRoute  } from '@angular/router';
 import { environment } from '../environments/environment.development';
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 
@@ -10,11 +10,18 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
   styleUrl: './app.component.scss',
   imports: [
     NavBarComponent,
-    RouterOutlet
-  ]
+    RouterOutlet,
+]
 })
 export class AppComponent implements OnInit {
+
+
+    constructor() {
+
+}
+
   ngOnInit(): void {
+ 
     
   }
   

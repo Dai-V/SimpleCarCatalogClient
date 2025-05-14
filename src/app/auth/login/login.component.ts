@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit{
 
 
   form!: FormGroup;
+  message = "";
 
   constructor(private authService :AuthService, private router:Router){
 
@@ -36,11 +37,13 @@ export class LoginComponent implements OnInit{
     this.authService.login(loginRequest).subscribe({
       next:result => {
         if (result.success)
-        {
-          this.router.navigate(["/"]);
+        { 
+          this.router.navigate([localStorage.getItem("redirectUrl")]);
+          
         }
+        
       },
-      error:error => console.error(error)
+      error:error => this.message = error.error
     });;
   }
 

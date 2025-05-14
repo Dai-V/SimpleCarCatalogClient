@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit,OnDestroy {
 
   isLoggedIn: boolean = false;
   private destroySubject = new Subject();
-  constructor(private authService:AuthService){
+  constructor(private authService:AuthService, private router:Router){
     authService.authStatus.pipe(takeUntil(this.destroySubject)).subscribe(
       result => this.isLoggedIn = result
     );
@@ -34,6 +34,11 @@ export class NavBarComponent implements OnInit,OnDestroy {
   }
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isAuthenticated();
+  }
+
+  login() {
+    if (this.router.url!="/login")
+    localStorage.setItem("redirectUrl",this.router.url);
   }
 
   logout() {

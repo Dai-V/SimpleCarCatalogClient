@@ -5,6 +5,7 @@ import { MakeComponent } from './make/make.component';
 import { AppComponent } from './app.component';
 import { MakeCarAmountComponent } from './make-car-amount/make-car-amount.component';
 import { LoginComponent } from './auth/login/login.component';
+import { IndexComponent } from './index/index.component';
 
 export const routes: Routes = [
     {path:"navbar", component: NavBarComponent},
@@ -13,5 +14,5 @@ export const routes: Routes = [
     {path:"makes/:id", component: MakeCarAmountComponent},
     {path:"cars/:id", component: CarMakeComponent},
     {path:"login",component:LoginComponent},
-    {path:"index", component: AppComponent, pathMatch:"full"}
+    {path:"", component:IndexComponent, pathMatch:"full"}
 ];
