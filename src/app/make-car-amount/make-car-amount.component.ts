@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { Router, RouterLink } from '@angular/router';
 import { MakeCarAmount } from '../make-car-amount';
